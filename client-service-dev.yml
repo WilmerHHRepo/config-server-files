@@ -1,0 +1,19 @@
+application:
+  author: Wilmer Huaqui
+  title: @project.name@
+  version: @project.version@
+
+server:
+  port: 9010 #${port:0}
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb://bootcamp51:bootcamp51@localhost:27017/bootcamp51?authSource=admin
+#Configuration Config server
+  application:
+    name: client-service
+  cloud:
+    uri: http://localhost:9000
+    profile: dev
+    enabled: true
