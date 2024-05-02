@@ -5,8 +5,8 @@ server:
 spring:
   data:
     mongodb:
-      # uri: mongodb://bootcamp51:bootcamp51@localhost:27017/bootcamp51?authSource=admin
-      uri: mongodb://192.168.1.51:27017/bootcamp51?authSource=admin
+      uri: mongodb://bootcamp51:bootcamp51@localhost:27017/bootcamp51?authSource=admin
+      # uri: mongodb://192.168.1.51:27017/bootcamp51?authSource=admin
 # mongodb://bootcamp51:bootcamp51@localhost:27017/bootcamp51?authSource=admin
 
 #actuator configuration
