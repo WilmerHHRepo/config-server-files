@@ -10,4 +10,4 @@ management:
     web:
       exposure:
         include: '*'
-        # base-path: bootcamp51/ms/client/actuator
+        base-path: bootcamp51/ms/client/actuator
