@@ -8,7 +8,6 @@ info:
 management:
   endpoints:
     web:
-      base-path: /actuator
       exposure:
         include: '*'
-        
+        base-path: /actuator
