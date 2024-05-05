@@ -18,18 +18,18 @@ spring:
     base-path: /bootcamp51/ms/product
 
 
-# #actuator configuration
-# info:
-#   app:
-#     name: client services
-#     description: client service
-#     version: 0.0.1
-# management:
-#   endpoints:
-#     web:
-#       exposure:
-#         include: '*'
-#         # base-path: bootcamp51/ms/client/actuator
+#actuator configuration
+info:
+  app:
+    name: product services
+    description: product service
+    version: 0.0.1
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+        # base-path: bootcamp51/ms/client/actuator
 
 rutaApiClient: "http://localhost:9020/bootcamp51/ms/product"
 retryApiClient: 3

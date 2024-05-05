@@ -1,13 +1,13 @@
 
-#actuator configuration
-info:
-  app:
-    name: client services
-    description: client service
-    version: 0.0.1
-management:
-  endpoints:
-    web:
-      exposure:
-        include: '*'
-        base-path: /actuator
+# #actuator configuration
+# info:
+#   app:
+#     name: client services
+#     description: client service
+#     version: 0.0.1
+# management:
+#   endpoints:
+#     web:
+#       exposure:
+#         include: '*'
+#         base-path: /actuator
