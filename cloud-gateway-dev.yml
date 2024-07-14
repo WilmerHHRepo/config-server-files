@@ -1,0 +1,57 @@
+server:
+  port: ${CUSTOM.SERVER.PORT:9080}
+
+# Cloud Gateway Routes
+spring:
+  cloud:
+    gateway:
+      routes:        
+
+        - id: ms-mgmt-client-service-route
+          uri: lb://ms-mgmt-client-service # http://service1.com, http://service2.com
+          predicates:
+            - Path=/api/client-service/**
+          filters:
+            - StripPrefix=2
+
+        - id: ms-mgmt-driverslicense-service-route
+          uri: lb://ms-mgmt-driverslicense-service # http://service1.com, http://service2.com
+          predicates:
+            - Path=/api/driverslicense-service/**
+          filters:
+            - StripPrefix=2
+
+        - id: ms-mgmt-user-service-route
+          uri: lb://ms-mgmt-user-service # http://service1.com, http://service2.com
+          predicates:
+            - Path=/api/user-service/**
+          filters:
+            - StripPrefix=2
+
+## Actuator configuration         
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: '*'
+#        base-path: /actuator
+## Zipkin configuration   
+#  tracing:
+#    sampling:
+#      probability: 1.0
+#  zipkin:
+#    tracing:
+#      endpoint: ${ZIPKIN.SERVER.HOSTNAME:http://localhost:9411/api/v2/spans}
+#
+## Logging Configuration
+## logging:
+##   level:
+##     reactor:
+##       netty: ALL
+#
+#mitocode:
+#  security:
+#    key: 9b2af5eb23412302211ad7c71cdc49332f5acac408d9cceccdc9b2a7d3ceebf7184be0c46486567d673730fe59a10a48d21f6f5c01baea14b811f2bd3994efe301bc186615ed0c1e3222bb57bb2cb36d72c80e6a62eaf6a01993c783fce6cc5a
+
+
+    
