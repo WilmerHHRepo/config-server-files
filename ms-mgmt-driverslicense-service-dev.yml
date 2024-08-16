@@ -28,25 +28,22 @@ management:
         include: '*'
         base-path: bootcamp51/ms/client/actuator
 
+resilience4j:
+  circuitbreaker:
+    configs:
+      client-service-cb:
+        slidingWindowSize: 12
+        failureRateThreshold: 40
+        waitDurationInOpenState: 10s
+        permittedNumberOfCallsInHalfOpenState: 8
+        slowCallRateThreshold: 20
+        slowCallDurationThreshold: 500ms
+        automaticTransitionFromOpenToHalfOpenEnabled: true
 
-#resilience4j:
-#  circuitbreaker:
-#    configs:
-#      customConfig:  # RATIO DE ERRORES
-#        slidingWindowSize: 12 # cantidad de peticiones
-#        failureRateThreshold: 40 #porcentaje de caidas
-#        waitDurationInOpenState: 10s # tiempo de abierto - despues pasa a un estado semi abierto
-#        permittedNumberOfCallsInHalfOpenState: 8 # cantidad de muestra pruebas en semi abierto
-#        # LLAMADAS LENTAS
-#        slowCallRateThreshold: 20 # porcentaje de llamada lentas
-#        slowCallDurationThreshold: 500ms #tiempo de respuesta si la cantidad de peticiones de 50% supera el tiempo de respuesta el servicio se puede abrir
-#        automaticTransitionFromOpenToHalfOpenEnabled: true
-#    instances:
-#      mitocode-product: # Nombre a mapear dentro del @CircuitBreaker
-#        base-config: product-service-cb
-#      mitocode-user:
-#        base-config: user-service-cb      
-#
+    instances:
+      client-service:
+        base-config: client-service-cb
+  
 
 
 
