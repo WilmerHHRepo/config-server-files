@@ -8,7 +8,7 @@ spring:
       routes:        
 
         - id: ms-mgmt-client-service-route
-          uri: lb://ms-mgmt-client-service # http://service1.com, http://service2.com
+          uri: lb://client-service # http://service1.com, http://service2.com
           predicates:
             - Path=/api/client-service/**
           filters:
