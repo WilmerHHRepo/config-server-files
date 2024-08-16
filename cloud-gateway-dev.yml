@@ -10,7 +10,7 @@ spring:
         - id: ms-mgmt-client-service-route
           uri: lb://ms-mgmt-client-service # http://service1.com, http://service2.com
           predicates:
-            - Path=/api/client-service/NEW/**
+            - Path=/api/client-service/**
           filters:
             - StripPrefix=2
 
